@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_aluno: 1
+  nota1: 1.5
+  nota2: 1.5
+  nota3: 1.5
+
+two:
+  id_aluno: 1
+  nota1: 1.5
+  nota2: 1.5
+  nota3: 1.5

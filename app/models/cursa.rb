@@ -1,0 +1,2 @@
+class Cursa < ApplicationRecord
+end

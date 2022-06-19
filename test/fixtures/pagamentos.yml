@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_pagamento: 1
+  id_aluno: 1
+  data_vencimento: MyString
+  date: MyString
+  data_pagamento: MyString
+  date: MyString
+  valor_mensalidade: 1.5
+  via_de_pagamento: MyString
+
+two:
+  id_pagamento: 1
+  id_aluno: 1
+  data_vencimento: MyString
+  date: MyString
+  data_pagamento: MyString
+  date: MyString
+  valor_mensalidade: 1.5
+  via_de_pagamento: MyString
