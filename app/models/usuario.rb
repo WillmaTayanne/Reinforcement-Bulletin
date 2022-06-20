@@ -4,5 +4,6 @@ class Usuario < ApplicationRecord
     validates :senha, presence: true
     validates :email, presence: true
     validates :telefone, presence: true
-    validates :is_professor, presence: true
+
+    has_many :alunos, class_name: "Aluno", :foreign_key => :cpf_responsavel, primary_key: 'cpf'
 end

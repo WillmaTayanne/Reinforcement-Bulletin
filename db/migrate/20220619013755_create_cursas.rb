@@ -6,6 +6,7 @@ class CreateCursas < ActiveRecord::Migration[7.0]
       t.float :nota1, :null => true
       t.float :nota2, :null => true
       t.float :nota3, :null => true
+      t.integer :status, :null => false, :default => 0
     end
 
     execute "ALTER TABLE cursas ADD CONSTRAINT fk_cursas_alunos FOREIGN KEY (id_aluno) REFERENCES alunos(id_aluno)"
