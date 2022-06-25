@@ -7,9 +7,10 @@ class CreateUsuarios < ActiveRecord::Migration[7.0]
       t.string :email, :null =>  false
       t.string :telefone, :limit => 11, :null =>  false
       t.boolean :is_professor, :null =>  false, :default => false
+      t.boolean :ativo, :null => false, :default => true
     end
 
     add_index :usuarios, :cpf, :unique => true
-    add_index :usuarios, :email, :unique => true    
+    add_index :usuarios, :email, :unique => true
   end
 end

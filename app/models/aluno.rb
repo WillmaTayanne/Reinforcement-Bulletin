@@ -4,5 +4,6 @@ class Aluno < ApplicationRecord
     validates :data_de_nascimento, presence: true
 
     belongs_to :usuarios, class_name: "Usuario", :foreign_key => :cpf_responsavel, primary_key: 'cpf'
+    has_many :cursas, class_name: "Cursa", :foreign_key => :id_aluno, primary_key: 'id_aluno'
     has_many :pagamentos, class_name: "Pagamento", :foreign_key => :id_aluno, primary_key: 'id_aluno'
 end

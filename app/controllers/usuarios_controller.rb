@@ -1,7 +1,7 @@
 class UsuariosController < ApplicationController
     def index
         begin
-            render json: Usuario.all.select(:cpf, :nome, :email, :telefone, :is_professor)
+            render json: Usuario.select(:cpf, :nome, :email, :telefone, :is_professor)
         rescue => e
             render json: {error: e.message }, status: 400
         end
@@ -35,17 +35,17 @@ class UsuariosController < ApplicationController
         begin
             usuario = Usuario.find_by_cpf(params[:id])
             usuario_r = usuario_params
-            if usuario && usuario_r.cpf && usuario_r.nome && usuario_r.email && usuario_r.telefone && usuario_r.is_professor
-                if Usuario.find_by_cpf(usuario_r.cpf)
+            if usuario && usuario_params
+                if usuario_r[:cpf] && Usuario.find_by_cpf(usuario_r[:cpf])
                     render json: {error: "CPF já cadastrado"}, status: :unprocessable_entity
-                elsif Usuario.find_by_email(usuario_r.email)
+                elsif usuario_r[:email] && Usuario.find_by_email(usuario_r[:email])
                     render json: {error: "Email já cadastrado"}, status: :unprocessable_entity
                 else
-                    unless usuario_r.senha
-                        usuario_r.senha = usuario.senha
+                    usuario_r.keys.each do |key|
+                        usuario[key] = usuario_r[key]
                     end
-
-                    update_result = usuario.update(usuario_params)
+                    
+                    update_result = usuario.save
 
                     if update_result
                         render json: format_render(usuario)
@@ -65,12 +65,16 @@ class UsuariosController < ApplicationController
         begin
             usuario = Usuario.find_by_cpf(params[:id])
             if usuario
-                destroy_result = usuario.destroy
+                if usuario.alunos.length == 0 && usuario.disciplinas.length == 0
+                    destroy_result = usuario.destroy
 
-                if destroy_result
-                    render json: format_render(usuario)
+                    if destroy_result
+                        render json: format_render(usuario)
+                    else
+                        render json: {error: usuario.errors.full_messages[0]}, status: 400
+                    end
                 else
-                    render json: {error: usuario.errors.full_messages[0]}, status: 400
+                    render json: {error: "Usuário não pode ser removido pois o mesmo já possui registros vinculados, caso deseje que o mesmo não se logue novamente desative-o"}, status: :unprocessable_entity
                 end
             else
                 render json: {error: "Usuário não encontrado"}, status: :unprocessable_entity
@@ -85,7 +89,19 @@ class UsuariosController < ApplicationController
             if params[:cpf] && params[:senha]
                 usuario = Usuario.where(cpf: params[:cpf], senha: params[:senha]).first
                 if usuario
-                    render json: format_render(usuario)
+                    if usuario.ativo
+                        result = format_render(usuario)
+
+                        if usuario.is_professor
+                            result[:disciplinas] = usuario.disciplinas
+                        else
+                            result[:alunos] = usuario.alunos
+                        end
+
+                        render json: result
+                    else
+                        render json: {error: "Seu acesso foi desativado"}, status: :unprocessable_entity
+                    end
                 else
                     render json: {error: "Usuário ou senha inválidos"}, status: :unprocessable_entity
                 end
@@ -97,13 +113,43 @@ class UsuariosController < ApplicationController
         end
     end
 
+    def responsaveis
+        begin
+            responsaveis = []
+            Usuario.where(:is_professor => false).each do |responsavel|
+                result = format_render(responsavel)
+                result[:alunos] = responsavel.alunos
+                responsaveis.push(result)
+            end
+
+            render json: responsaveis
+        rescue => e
+            render json: {error: e.message }, status: 400
+        end
+    end
+
+    def professores
+        begin
+            professores = []
+            Usuario.where(:is_professor => true).each do |professor|
+                result = format_render(professor)
+                result[:disciplinas] = professor.disciplinas
+                professores.push(result)
+            end
+
+            render json: professores
+        rescue => e
+            render json: {error: e.message }, status: 400
+        end
+    end
+
     private
 
     def format_render(usuario)
-        {cpf: usuario.cpf, nome: usuario.nome, email: usuario.email, telefone: usuario.telefone, is_professor: usuario.is_professor}
+        {cpf: usuario.cpf, nome: usuario.nome, email: usuario.email, telefone: usuario.telefone, is_professor: usuario.is_professor, ativo: usuario.ativo}
     end
 
     def usuario_params
-        params.require(:usuario).permit(:cpf, :nome, :senha, :email, :telefone, :is_professor)
+        params.require(:usuario).permit(:cpf, :nome, :senha, :email, :telefone, :is_professor, :ativo)
     end
 end

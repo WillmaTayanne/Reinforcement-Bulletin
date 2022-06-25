@@ -12,13 +12,22 @@ class AlunosController < ApplicationController
             aluno = Aluno.new(aluno_params)
             if aluno && aluno.cpf_responsavel && aluno.nome_do_aluno && aluno.data_de_nascimento
                 aluno.ativo = true
-                save_result = aluno.save
-                
-                if save_result
-                    render json:aluno
+                usuario = Usuario.find_by_cpf(aluno.cpf_responsavel)
+                if usuario
+                    unless usuario.is_professor
+                        save_result = aluno.save
+
+                        if save_result
+                            render json:aluno
+                        else
+                            render json: {error: aluno.errors.full_messages[0]}, status: 400
+                        end
+                    else
+                        render json: {error: "Aluno não pode ter um professor como responsável"}, status: :unprocessable_entity
+                    end
                 else
-                    render json: {error: aluno.errors.full_messages[0]}, status: 400
-                end                
+                    render json: {error: "Usuário inválido"}, status: :unprocessable_entity
+                end
             else
                 render json: {error: "Dados inválidos"}, status: :unprocessable_entity
             end
@@ -31,9 +40,13 @@ class AlunosController < ApplicationController
         begin
             aluno = Aluno.find_by_id_aluno(params[:id])
             aluno_r = aluno_params
-            if aluno && aluno_r.cpf_responsavel && aluno_r.nome_do_aluno && aluno_r.data_de_nascimento && aluno_r.ativo
-                if Usuario.find_by_cpf(aluno_r.cpf_responsavel)
-                    update_result = aluno.update(aluno_r)
+            if aluno && aluno_r
+                if aluno_r[:cpf_responsavel] == nil || aluno_r[:cpf_responsavel] && Usuario.find_by_cpf(aluno_r[:cpf_responsavel])
+                    aluno_r.keys.each do |key|
+                        aluno[key] = aluno_r[key]
+                    end
+
+                    update_result = aluno.save
                     
                     if update_result
                         render json:aluno
@@ -41,7 +54,7 @@ class AlunosController < ApplicationController
                         render json: {error: aluno.errors.full_messages[0]}, status: 400
                     end
                 else
-                    render json: {error: "CPF do responsável não cadastrado"}, status: :unprocessable_entity
+                    render json: {error: "Novo CPF de responsável não esta cadastrado"}, status: :unprocessable_entity
                 end
             else
                 render json: {error: "Dados inválidos"}, status: :unprocessable_entity
@@ -55,12 +68,16 @@ class AlunosController < ApplicationController
         begin
             aluno = Aluno.find_by_id_aluno(params[:id])
             if aluno
-                destroy_result = aluno.destroy
+                if aluno.pagamentos.length == 0 && aluno.cursas.length == 0
+                    destroy_result = aluno.destroy
                 
-                if destroy_result
-                    render json:aluno
+                    if destroy_result
+                        render json:aluno
+                    else
+                        render json: {error: aluno.errors.full_messages[0]}, status: 400
+                    end
                 else
-                    render json: {error: aluno.errors.full_messages[0]}, status: 400
+                    render json: {error: "Aluno não pode ser removido pois o mesmo já possui registros vinculados, caso deseje que o mesmo não seja mais acessado desative-o"}, status: :unprocessable_entity
                 end
             else
                 render json: {error: "Aluno não encontrado"}, status: :unprocessable_entity
@@ -72,7 +89,11 @@ class AlunosController < ApplicationController
 
     def alunos_responsavel
         begin
-            render json:Aluno.where(:cpf_responsavel => params[:cpf])
+            if params[:cpf]
+                render json:Aluno.where(:cpf_responsavel => params[:cpf])
+            else
+                render json: {error: "CPF de responsável não foi informado"}, status: :unprocessable_entity
+            end
         rescue => e
             render json: {error: e.message}, status: 400
         end

@@ -28,11 +28,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_19_013755) do
     t.float "nota1"
     t.float "nota2"
     t.float "nota3"
+    t.integer "status", default: 0, null: false
   end
 
   create_table "disciplinas", primary_key: "id_disciplina", id: :bigint, default: -> { "nextval('disciplinas_id_seq'::regclass)" }, force: :cascade do |t|
     t.string "cpf_professor", limit: 11, null: false
     t.string "nome_disciplina", limit: 80, null: false
+    t.boolean "ativo", default: true, null: false
     t.index ["id_disciplina"], name: "index_disciplinas_on_id_disciplina", unique: true
   end
 
@@ -51,13 +53,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_19_013755) do
     t.string "email", null: false
     t.string "telefone", limit: 11, null: false
     t.boolean "is_professor", default: false, null: false
+    t.boolean "ativo", default: true, null: false
     t.index ["cpf"], name: "index_usuarios_on_cpf", unique: true
     t.index ["email"], name: "index_usuarios_on_email", unique: true
   end
 
-  add_foreign_key "alunos", "usuarios", column: "cpf_responsavel", primary_key: "cpf", name: "fk_alunos_usuarios"
+  add_foreign_key "alunos", "usuarios", column: "cpf_responsavel", primary_key: "cpf", name: "fk_alunos_usuarios", on_update: :cascade
   add_foreign_key "cursas", "alunos", column: "id_aluno", primary_key: "id_aluno", name: "fk_cursas_alunos"
   add_foreign_key "cursas", "disciplinas", column: "id_disciplina", primary_key: "id_disciplina", name: "fk_cursas_disciplinas"
-  add_foreign_key "disciplinas", "usuarios", column: "cpf_professor", primary_key: "cpf", name: "fk_disciplinas_usuarios"
+  add_foreign_key "disciplinas", "usuarios", column: "cpf_professor", primary_key: "cpf", name: "fk_disciplinas_usuarios", on_update: :cascade
   add_foreign_key "pagamentos", "alunos", column: "id_aluno", primary_key: "id_aluno", name: "fk_pagamentos_alunos"
 end
