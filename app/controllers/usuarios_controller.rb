@@ -1,7 +1,7 @@
 class UsuariosController < ApplicationController
     def index
         begin
-            render json: Usuario.select(:cpf, :nome, :email, :telefone, :is_professor)
+            render json: Usuario.select(:cpf, :nome, :email, :telefone, :is_professor, :ativo)
         rescue => e
             render json: {error: e.message }, status: 400
         end
