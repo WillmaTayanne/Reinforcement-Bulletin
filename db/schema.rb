@@ -22,7 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_19_013755) do
     t.index ["id_aluno"], name: "index_alunos_on_id_aluno", unique: true
   end
 
-  create_table "cursas", id: false, force: :cascade do |t|
+  create_table "cursas", primary_key: "id_cursa", id: :bigint, default: -> { "nextval('cursas_id_seq'::regclass)" }, force: :cascade do |t|
     t.integer "id_disciplina"
     t.integer "id_aluno"
     t.float "nota1"

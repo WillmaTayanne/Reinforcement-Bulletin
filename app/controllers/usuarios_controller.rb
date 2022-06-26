@@ -40,6 +40,9 @@ class UsuariosController < ApplicationController
                     render json: {error: "CPF já cadastrado"}, status: :unprocessable_entity
                 elsif usuario_r[:email] && Usuario.find_by_email(usuario_r[:email])
                     render json: {error: "Email já cadastrado"}, status: :unprocessable_entity
+                elsif usuario_r[:is_professor] != nil && usuario.is_professor != usuario_r[:is_professor] &&
+                    (usuario.alunos.length != 0 || usuario.disciplinas.length != 0)
+                    render json: {error: "Flag de professor / responsável não pode ser alterada pois tal usuário já possui disciplinas / alunos vinculados ao mesmo"}, status: :unprocessable_entity
                 else
                     usuario_r.keys.each do |key|
                         usuario[key] = usuario_r[key]

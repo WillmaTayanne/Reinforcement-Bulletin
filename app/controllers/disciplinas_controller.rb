@@ -10,7 +10,7 @@ class DisciplinasController < ApplicationController
     def create
         begin
             disciplina = Disciplina.new(disciplina_params)
-            if disciplina && disciplina.cpf_professor && disciplina.nome_da_disciplina
+            if disciplina && disciplina.cpf_professor && disciplina.nome_disciplina
 
                 usuario = Usuario.find_by_cpf(disciplina.cpf_professor)
                 if usuario
@@ -102,6 +102,6 @@ class DisciplinasController < ApplicationController
     private
 
     def disciplina_params
-        params.require(:disciplina).permit(:cpf_professor, :nome_da_disciplina, :ativo)
+        params.require(:disciplina).permit(:cpf_professor, :nome_disciplina, :ativo)
     end
 end

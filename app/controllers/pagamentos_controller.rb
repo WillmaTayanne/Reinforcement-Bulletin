@@ -11,13 +11,17 @@ class PagamentosController < ApplicationController
         begin
             pagamento = Pagamento.new(pagamento_params)
             if pagamento && pagamento.id_aluno && pagamento.data_vencimento && pagamento.valor_mensalidade
-                save_result = pagamento.save
+                if Aluno.find_by_id_aluno(pagamento.id_aluno)
+                    save_result = pagamento.save
                 
-                if save_result
-                    render json:pagamento
+                    if save_result
+                        render json:pagamento
+                    else
+                        render json: {error: pagamento.errors.full_messages[0]}, status: 400
+                    end
                 else
-                    render json: {error: pagamento.errors.full_messages[0]}, status: 400
-                end                
+                    render json: {error: "Aluno não encontrado"}, status: :unprocessable_entity
+                end
             else
                 render json: {error: "Dados inválidos"}, status: :unprocessable_entity
             end
@@ -76,7 +80,7 @@ class PagamentosController < ApplicationController
     def pagamentos_aluno
         begin
             if params[:id_aluno]
-                render json:Pagamento.where(:id_aluno => params[:id_aluno]).first
+                render json:Pagamento.where(:id_aluno => params[:id_aluno])
             else
                 render json: {error: "Id de aluno não foi informado"}, status: :unprocessable_entity
             end

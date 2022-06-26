@@ -11,12 +11,20 @@ class CursasController < ApplicationController
         begin
             cursa = Cursa.new(cursa_params)
             if cursa && cursa.id_aluno && cursa.id_disciplina
-                save_result = cursa.save
+                aluno = Aluno.find_by_id_aluno(cursa.id_aluno)
+                disciplina = Disciplina.find_by_id_disciplina(cursa.id_disciplina)
+                if aluno && disciplina
+                    save_result = cursa.save
 
-                if save_result
-                    render json:cursa
+                    if save_result
+                        render json:cursa
+                    else
+                        render json: {error: cursa.errors.full_messages[0]}, status: 400
+                    end   
+                elsif disciplina
+                    render json: {error: "Aluno não encontrado"}, status: :unprocessable_entity
                 else
-                    render json: {error: cursa.errors.full_messages[0]}, status: 400
+                    render json: {error: "Disciplina não encontrada"}, status: :unprocessable_entity
                 end
             else
                 render json: {error: "Dados inválidos"}, status: :unprocessable_entity
@@ -31,20 +39,22 @@ class CursasController < ApplicationController
             cursa = Cursa.find_by_id_cursa(params[:id])
             cursa_r = cursa_params
             if cursa && cursa_r
-                if cursa_r[:cpf_professor] == nil || cursa_r[:cpf_professor] && Usuario.find_by_cpf(cursa_r[:cpf_professor])
+                if cursa_r[:id_disciplina] && Disciplina.find_by_id_disciplina(cursa_r[:id_disciplina]) == nil
+                    render json: {error: "Disciplina não encontrada"}, status: :unprocessable_entity
+                elsif cursa_r[:id_aluno] && Aluno.find_by_id_aluno(cursa_r[:id_aluno]) == nil
+                    render json: {error: "Aluno não encontrado"}, status: :unprocessable_entity
+                else
                     cursa_r.keys.each do |key|
                         cursa[key] = cursa_r[key]
                     end
                     
-                    update_result = cursa.update(cursa_r)
+                    update_result = cursa.save
                     
                     if update_result
                         render json:cursa
                     else
                         render json: {error: cursa.errors.full_messages[0]}, status: 400
                     end
-                else
-                    render json: {error: "CPF do responsável não cadastrado"}, status: :unprocessable_entity
                 end
             else
                 render json: {error: "Dados inválidos"}, status: :unprocessable_entity
@@ -56,22 +66,17 @@ class CursasController < ApplicationController
 
     def destroy
         begin
-            cursa_r = cursa_params
-            if cursa_r && cursa_r.id_aluno && cursa_r.id_disciplina
-                vinculo = Cursa.where(:id_aluno => cursa_r.id_aluno, :id_disciplina => cursa_r.id_disciplina)
-                if vinculo
-                    destroy_result = vinculo.destroy
-                
-                    if destroy_result
-                        render json:vinculo
-                    else
-                        render json: {error: vinculo.errors.full_messages[0]}, status: 400
-                    end
+            cursa = Cursa.find_by_id_cursa(params[:id])
+            if cursa
+                cursa_result = cursa.destroy
+
+                if cursa_result
+                    render json:cursa
                 else
-                    render json: {error: "Vínculo de aluno e discipliona não encontrado"}, status: :unprocessable_entity
+                    render json: {error: cursa.errors.full_messages[0]}, status: 400
                 end
             else
-                render json: {error: "Dados inválidos"}, status: :unprocessable_entity
+                render json: {error: "Vínculo de aluno e discipliona não encontrado"}, status: :unprocessable_entity
             end
         rescue => e
             render json: {error: e.message }, status: 400
@@ -81,7 +86,12 @@ class CursasController < ApplicationController
     def cursas_disciplina
         begin
             if params[:id_disciplina]
-                render json: Cursa.find_by_id_disciplina(params[:id_disciplina])
+                disciplina = Disciplina.find_by_id_disciplina(params[:id_disciplina])
+                if disciplina
+                    render json: disciplina.cursas
+                else
+                    render json: {error: "Disciplina não encontrada"}, status: :unprocessable_entity
+                end
             else
                 render json: {error: "Id de disciplina não foi informado"}, status: :unprocessable_entity
             end
@@ -93,7 +103,12 @@ class CursasController < ApplicationController
     def cursas_aluno
         begin
             if params[:id_aluno]
-                render json: Cursa.find_by_id_aluno(params[:id_aluno])
+                aluno = Aluno.find_by_id_aluno(params[:id_aluno])
+                if aluno
+                    render json: aluno.cursas
+                else
+                    render json: {error: "Aluno não encontrado"}, status: :unprocessable_entity
+                end
             else
                 render json: {error: "Id de aluno não foi informado"}, status: :unprocessable_entity
             end
@@ -105,6 +120,6 @@ class CursasController < ApplicationController
     private
 
     def cursa_params
-        params.require(:cursa).permit(:id_aluno, :id_disciplina, :nota1, :nota2, :nota3)
+        params.require(:cursa).permit(:id_aluno, :id_disciplina, :nota1, :nota2, :nota3, :status)
     end
 end
