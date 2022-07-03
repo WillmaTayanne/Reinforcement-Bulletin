@@ -36,9 +36,9 @@ class UsuariosController < ApplicationController
             usuario = Usuario.find_by_cpf(params[:id])
             usuario_r = usuario_params
             if usuario && usuario_params
-                if usuario_r[:cpf] && Usuario.find_by_cpf(usuario_r[:cpf])
+                if usuario_r[:cpf] && usuario.cpf != usuario_r[:cpf] && Usuario.find_by_cpf(usuario_r[:cpf])
                     render json: {error: "CPF já cadastrado"}, status: :unprocessable_entity
-                elsif usuario_r[:email] && Usuario.find_by_email(usuario_r[:email])
+                elsif usuario_r[:email] && usuario.email != usuario_r[:email] && Usuario.find_by_email(usuario_r[:email])
                     render json: {error: "Email já cadastrado"}, status: :unprocessable_entity
                 elsif usuario_r[:is_professor] != nil && usuario.is_professor != usuario_r[:is_professor] &&
                     (usuario.alunos.length != 0 || usuario.disciplinas.length != 0)
