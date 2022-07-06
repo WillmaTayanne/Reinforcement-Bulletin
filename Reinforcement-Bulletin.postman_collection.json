@@ -1,0 +1,5554 @@
+{
+	"info": {
+		"_postman_id": "b19c8ae8-bc66-47d9-a329-f9a3b1dd8d40",
+		"name": "Reinforcement-Bulletin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11452831"
+	},
+	"item": [
+		{
+			"name": "usuarios",
+			"item": [
+				{
+					"name": "usuarios (index)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}:{{porta}}/usuarios",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "usuarios (index)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}:{{porta}}/usuarios",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"usuarios"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 26 Jun 2022 03:49:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Origin"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"9b5e7ac4b2ffc1d474ce4828872a7876\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "ba1ddcd2-54b5-4446-9bf9-ec6b0ca5d18e"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.055458"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"cpf\": \"12345678916\",\n        \"nome\": \"Teste Professor\",\n        \"email\": \"teste5@gmail.com\",\n        \"telefone\": \"83988664455\",\n        \"is_professor\": true,\n        \"ativo\": true\n    },\n    {\n        \"cpf\": \"12345678915\",\n        \"nome\": \"Teste\",\n        \"email\": \"teste3@gmail.com\",\n        \"telefone\": \"83988664455\",\n        \"is_professor\": false,\n        \"ativo\": true\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "usuarios (create) | Dados Invalidos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cpf\": \"12345678913\",\r\n    \"senha\": \"1234567890\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/usuarios",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "usuarios (create) | Dados Invalidos",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cpf\": \"12345678913\",\r\n    \"senha\": \"1234567890\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/usuarios",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"usuarios"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "59f2d10c-ef31-4be3-9f80-91a8cbebe341"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.081257"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=2.1552734375, process_action.action_controller;dur=12.173583984375"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Dados inválidos\"\n}"
+						}
+					]
+				},
+				{
+					"name": "usuarios (create) - Responsavel | Sucess",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cpf\": \"12345678915\",\r\n    \"nome\": \"Teste\",\r\n    \"senha\": \"1234567890\",\r\n    \"email\": \"teste3@gmail.com\",\r\n    \"telefone\": \"83988664455\",\r\n    \"is_professor\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/usuarios",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "usuarios (create - Responsavel) | Sucess",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cpf\": \"12345678915\",\r\n    \"nome\": \"Teste\",\r\n    \"senha\": \"1234567890\",\r\n    \"email\": \"teste3@gmail.com\",\r\n    \"telefone\": \"83988664455\",\r\n    \"is_professor\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/usuarios",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"usuarios"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e04d4383cb6e90b51196f35db1345fbc\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "8c614746-db8a-44f0-b276-bfe51fec8064"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.838254"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=2.79443359375, sql.active_record;dur=459.017333984375, instantiation.active_record;dur=0.080810546875, process_action.action_controller;dur=745.18212890625"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"cpf\": \"12345678915\",\n    \"nome\": \"Teste\",\n    \"email\": \"teste3@gmail.com\",\n    \"telefone\": \"83988664455\",\n    \"is_professor\": true,\n    \"ativo\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "usuarios (create) - Professor | Sucess",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cpf\": \"12345678916\",\r\n    \"nome\": \"Teste Professor\",\r\n    \"senha\": \"1234567890\",\r\n    \"email\": \"teste5@gmail.com\",\r\n    \"telefone\": \"83988664455\",\r\n    \"is_professor\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/usuarios",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "usuarios (create) - Professor | Sucess",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cpf\": \"12345678916\",\r\n    \"nome\": \"Teste Professor\",\r\n    \"senha\": \"1234567890\",\r\n    \"email\": \"teste5@gmail.com\",\r\n    \"telefone\": \"83988664455\",\r\n    \"is_professor\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/usuarios",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"usuarios"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6e35aa05ea1bd0e8ea4c693d7a0c5a37\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "e25ca156-0b39-4652-991b-96da87d46b12"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.602892"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=2.01513671875, sql.active_record;dur=439.781494140625, instantiation.active_record;dur=0.085205078125, process_action.action_controller;dur=531.967041015625"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"cpf\": \"12345678916\",\n    \"nome\": \"Teste Professor\",\n    \"email\": \"teste5@gmail.com\",\n    \"telefone\": \"83988664455\",\n    \"is_professor\": true,\n    \"ativo\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "usuarios | Sucess",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Teste2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/usuarios/12345678916",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"usuarios",
+								"12345678916"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "usuarios | Sucess",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Teste2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/usuarios/12345678915",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"usuarios",
+										"12345678915"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"bdc60ad4925a7bb5464b0c68873c9d0d\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "e01f115b-25a5-4e07-b2dd-fb8173b03bca"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.522305"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=1.922119140625, sql.active_record;dur=360.655029296875, instantiation.active_record;dur=0.096923828125, process_action.action_controller;dur=451.09423828125"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"cpf\": \"12345678915\",\n    \"nome\": \"Teste2\",\n    \"email\": \"teste3@gmail.com\",\n    \"telefone\": \"83988664455\",\n    \"is_professor\": true,\n    \"ativo\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "usuarios (delete) | Sucess",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/usuarios/12345678916",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"usuarios",
+								"12345678916"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "usuarios (delete) | Sucess",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/usuarios/12345678916",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"usuarios",
+										"12345678916"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6e35aa05ea1bd0e8ea4c693d7a0c5a37\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "07588e2f-9ed4-46bb-9498-ead1ed1590c8"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "1.187636"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=1.852783203125, sql.active_record;dur=715.65283203125, instantiation.active_record;dur=0.14306640625, process_action.action_controller;dur=1125.041748046875"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"cpf\": \"12345678916\",\n    \"nome\": \"Teste Professor\",\n    \"email\": \"teste5@gmail.com\",\n    \"telefone\": \"83988664455\",\n    \"is_professor\": true,\n    \"ativo\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "responsaveis",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}:{{porta}}/responsaveis",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"responsaveis"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "responsaveis",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}:{{porta}}/responsaveis",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"responsaveis"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7576fe077be3b7ef0b93c965f7121084\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "633d5756-85f0-4abc-9763-4bcdc04f227f"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.500837"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=0.3505859375, sql.active_record;dur=266.60107421875, instantiation.active_record;dur=92.79931640625, process_action.action_controller;dur=443.220703125"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"cpf\": \"12345678912\",\n        \"nome\": \"Teste\",\n        \"email\": \"teste@gmail.com\",\n        \"telefone\": \"83988664455\",\n        \"is_professor\": false,\n        \"ativo\": true,\n        \"alunos\": [\n            {\n                \"id_aluno\": 2,\n                \"cpf_responsavel\": \"12345678912\",\n                \"nome_do_aluno\": \"Luciano\",\n                \"data_de_nascimento\": \"2014-08-02\",\n                \"ativo\": true\n            }\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "professores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}:{{porta}}/professores",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"professores"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "professores",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}:{{porta}}/professores",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"professores"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11042ff4887e44a7195467b611fa4cbe\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "39cda68b-40bb-4d1b-88a7-3f54dbc42a2c"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.670948"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=0.3388671875, sql.active_record;dur=485.867431640625, instantiation.active_record;dur=106.024658203125, process_action.action_controller;dur=613.47802734375"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"cpf\": \"12345678913\",\n        \"nome\": \"Teste2\",\n        \"email\": \"teste2@gmail.com\",\n        \"telefone\": \"83988664455\",\n        \"is_professor\": true,\n        \"ativo\": true,\n        \"disciplinas\": [\n            {\n                \"id_disciplina\": 2,\n                \"cpf_professor\": \"12345678913\",\n                \"nome_disciplina\": \"Disciplina Teste\",\n                \"ativo\": true\n            }\n        ]\n    },\n    {\n        \"cpf\": \"12345678915\",\n        \"nome\": \"Teste2\",\n        \"email\": \"teste3@gmail.com\",\n        \"telefone\": \"83988664455\",\n        \"is_professor\": true,\n        \"ativo\": true,\n        \"disciplinas\": []\n    },\n    {\n        \"cpf\": \"12345678916\",\n        \"nome\": \"Teste Professor\",\n        \"email\": \"teste5@gmail.com\",\n        \"telefone\": \"83988664455\",\n        \"is_professor\": true,\n        \"ativo\": true,\n        \"disciplinas\": []\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "login (professor)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cpf\": \"12345678915\",\r\n    \"senha\": \"1234567890\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login (professor)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cpf\": \"12345678915\",\r\n    \"senha\": \"1234567890\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/login",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d398ad55252bd3bd45faa17f50c3a9fb\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "590921ce-4bbf-43ea-b234-f846c9cbede5"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.544290"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=7.6728515625, sql.active_record;dur=177.9736328125, instantiation.active_record;dur=0.1279296875, process_action.action_controller;dur=273.118408203125"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"cpf\": \"12345678915\",\n    \"nome\": \"Teste2\",\n    \"email\": \"teste3@gmail.com\",\n    \"telefone\": \"83988664455\",\n    \"is_professor\": true,\n    \"ativo\": true,\n    \"disciplinas\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "login (responsavel)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cpf\": \"12345678916\",\r\n    \"senha\": \"1234567890\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login (responsavel)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cpf\": \"12345678916\",\r\n    \"senha\": \"1234567890\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/login",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"0b1d2382150da55780004b879fda4406\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "6c66937a-491b-46de-8765-6d8337469efd"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.361923"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=2.135009765625, sql.active_record;dur=199.20556640625, instantiation.active_record;dur=0.3173828125, process_action.action_controller;dur=300.7216796875"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"cpf\": \"12345678916\",\n    \"nome\": \"Teste Professor\",\n    \"email\": \"teste5@gmail.com\",\n    \"telefone\": \"83988664455\",\n    \"is_professor\": true,\n    \"ativo\": true,\n    \"disciplinas\": []\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "alunos",
+			"item": [
+				{
+					"name": "alunos (index)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}:{{porta}}/alunos",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"alunos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "alunos (index)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}:{{porta}}/alunos",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"alunos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d4d285755ae63f1e40032587fa33da6d\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "c55a5788-9076-4539-afb3-8961cc0339d6"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.367094"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=0.350830078125, sql.active_record;dur=150.34423828125, instantiation.active_record;dur=0.091796875, process_action.action_controller;dur=304.8564453125"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id_aluno\": 2,\n        \"cpf_responsavel\": \"12345678912\",\n        \"nome_do_aluno\": \"Luciano\",\n        \"data_de_nascimento\": \"2014-08-02\",\n        \"ativo\": true\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "alunos (create) | Dados Invalidos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome_do_aluno\": \"Aluno Teste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/alunos",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"alunos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "alunos (create) | Dados Invalidos",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome_do_aluno\": \"Aluno Teste\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/alunos",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"alunos"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "4e105024-f87e-4963-b293-93e65ed05c90"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.184428"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=2.644287109375, process_action.action_controller;dur=10.736328125"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Dados inválidos\"\n}"
+						}
+					]
+				},
+				{
+					"name": "alunos (create) | Usuario Invalido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cpf_responsavel\": \"\",\r\n    \"nome_do_aluno\": \"Aluno Teste\",\r\n    \"data_de_nascimento\": \"02/08/2014\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/alunos",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"alunos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "alunos (create) | Usuario Invalido",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cpf_responsavel\": \"\",\r\n    \"nome_do_aluno\": \"Aluno Teste\",\r\n    \"data_de_nascimento\": \"02/08/2014\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/alunos",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"alunos"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "b7b86e22-83d8-4c37-9533-12b2f0394325"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "3.719729"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=1.899658203125, sql.active_record;dur=2242.353515625, instantiation.active_record;dur=0.14501953125, process_action.action_controller;dur=3663.400390625"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Usuário inválido\"\n}"
+						}
+					]
+				},
+				{
+					"name": "alunos (create) | Professor Failed",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cpf_responsavel\": \"12345678916\",\r\n    \"nome_do_aluno\": \"Aluno Teste\",\r\n    \"data_de_nascimento\": \"02/08/2014\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/alunos",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"alunos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "alunos (create) | Professor Failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cpf_responsavel\": \"12345678916\",\r\n    \"nome_do_aluno\": \"Aluno Teste\",\r\n    \"data_de_nascimento\": \"02/08/2014\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/alunos",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"alunos"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "2f975ce7-3046-400f-b866-785d6afd3584"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.658061"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=8.506103515625, sql.active_record;dur=155.748046875, instantiation.active_record;dur=0.197998046875, process_action.action_controller;dur=310.999267578125"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Aluno não pode ter um professor como responsável\"\n}"
+						}
+					]
+				},
+				{
+					"name": "alunos (create) | Sucess",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cpf_responsavel\": \"12345678915\",\r\n    \"nome_do_aluno\": \"Aluno Teste\",\r\n    \"data_de_nascimento\": \"02/08/2014\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/alunos",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"alunos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "alunos (create) | Sucess",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cpf_responsavel\": \"12345678912\",\r\n    \"nome_do_aluno\": \"Aluno Teste\",\r\n    \"data_de_nascimento\": \"02/08/2014\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/alunos",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"alunos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e72c50a9e1b964820dd787b6df56883c\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "e0bc1f5e-aa6a-4bb0-af69-387217a314f2"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.928085"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=2.16845703125, sql.active_record;dur=617.281494140625, instantiation.active_record;dur=0.220947265625, process_action.action_controller;dur=864.697265625"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id_aluno\": 3,\n    \"cpf_responsavel\": \"12345678912\",\n    \"nome_do_aluno\": \"Aluno Teste\",\n    \"data_de_nascimento\": \"2014-08-02\",\n    \"ativo\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "alunos | Sucess",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome_do_aluno\": \"Luciano\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/alunos/2",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"alunos",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "alunos | Sucess",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome_do_aluno\": \"Luciano\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/alunos/2",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"alunos",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"dd9f9c2d456c7533eb78ba37db61d53d\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "9467140d-6668-47b0-a52f-601ef6628dfe"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "1.040799"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=2.24462890625, sql.active_record;dur=579.735595703125, instantiation.active_record;dur=0.167236328125, process_action.action_controller;dur=887.165283203125"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"nome_do_aluno\": \"Luciano\",\n    \"id_aluno\": 2,\n    \"cpf_responsavel\": \"12345678912\",\n    \"data_de_nascimento\": \"2014-08-02\",\n    \"ativo\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "alunos (delete) | Sucess",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/alunos/3",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"alunos",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "alunos (delete) | Sucess",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/alunos/3",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"alunos",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e72c50a9e1b964820dd787b6df56883c\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "0f491a80-7728-4785-a605-bda2e90c5df1"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "1.704307"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=7.4599609375, sql.active_record;dur=1064.317626953125, instantiation.active_record;dur=0.16650390625, process_action.action_controller;dur=1628.533935546875"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id_aluno\": 3,\n    \"cpf_responsavel\": \"12345678912\",\n    \"nome_do_aluno\": \"Aluno Teste\",\n    \"data_de_nascimento\": \"2014-08-02\",\n    \"ativo\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "alunos/responsaveis | Sucess",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}:{{porta}}/alunos/responsavel/12345678912",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"alunos",
+								"responsavel",
+								"12345678912"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "alunos/responsaveis | Sucess",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}:{{porta}}/alunos/responsavel/12345678912",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"alunos",
+										"responsavel",
+										"12345678912"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d4d285755ae63f1e40032587fa33da6d\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "f15a1eb5-3f11-48bb-bdb9-09a85b4649db"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.499820"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=1.88232421875, sql.active_record;dur=155.013671875, instantiation.active_record;dur=0.0712890625, process_action.action_controller;dur=444.489990234375"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id_aluno\": 2,\n        \"cpf_responsavel\": \"12345678912\",\n        \"nome_do_aluno\": \"Luciano\",\n        \"data_de_nascimento\": \"2014-08-02\",\n        \"ativo\": true\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "usuarios | Failed is_professor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"is_professor\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/usuarios/12345678912",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"usuarios",
+								"12345678912"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "usuarios | Failed is_professor",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"is_professor\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/usuarios/12345678912",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"usuarios",
+										"12345678912"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "90e4105f-7663-4731-b4da-91cec03d68e5"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.531405"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=1.92041015625, sql.active_record;dur=320.71630859375, instantiation.active_record;dur=0.360107421875, process_action.action_controller;dur=472.460693359375"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Flag de professor / responsável não pode ser alterada pois tal usuário já possui disciplinas / alunos vinculados ao mesmo\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "disciplinas",
+			"item": [
+				{
+					"name": "disciplinas (index)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}:{{porta}}/disciplinas",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"disciplinas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "disciplinas (index)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}:{{porta}}/disciplinas",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"disciplinas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"0ad38b06a08373429bf88abf3e49c195\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "1aade23b-35fa-4cda-bb3b-31bb77da12f7"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.598829"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=1.14013671875, sql.active_record;dur=163.629150390625, instantiation.active_record;dur=0.237548828125, process_action.action_controller;dur=322.2568359375"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id_disciplina\": 2,\n        \"cpf_professor\": \"12345678913\",\n        \"nome_disciplina\": \"Disciplina Teste\",\n        \"ativo\": true\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "disciplinas (create) | Dados Invalidos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome_disciplina\": \"Disciplina Teste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/disciplinas",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"disciplinas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "disciplinas (create) | Dados Invalidos",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome_disciplina\": \"Disciplina Teste\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/disciplinas",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"disciplinas"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "ee95c2b6-899d-4ce0-b577-9a930a381d62"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.157727"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=1.8583984375, process_action.action_controller;dur=2.349853515625"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Dados inválidos\"\n}"
+						}
+					]
+				},
+				{
+					"name": "disciplinas (create) | Usuario Invalido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cpf_professor\": \"\",\r\n    \"nome_disciplina\": \"Disciplina Teste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/disciplinas",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"disciplinas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "disciplinas (create) | Usuario Invalido",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cpf_professor\": \"\",\r\n    \"nome_disciplina\": \"Disciplina Teste\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/disciplinas",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"disciplinas"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "52ee9e52-7689-47da-88bc-0f671814f09b"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.373251"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=2.099365234375, sql.active_record;dur=154.7958984375, instantiation.active_record;dur=0.025146484375, process_action.action_controller;dur=310.3671875"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Usuário inválido\"\n}"
+						}
+					]
+				},
+				{
+					"name": "disciplinas (create) | Responsavel Failed",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cpf_professor\": \"12345678912\",\r\n    \"nome_disciplina\": \"Disciplina Teste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/disciplinas",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"disciplinas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "disciplinas (create) | Responsavel Failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cpf_professor\": \"12345678912\",\r\n    \"nome_disciplina\": \"Disciplina Teste\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/disciplinas",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"disciplinas"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "5abee8a2-d8e1-4807-8ee9-b35736be55a7"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.353020"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=1.980712890625, sql.active_record;dur=142.47119140625, instantiation.active_record;dur=0.12353515625, process_action.action_controller;dur=295.697509765625"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Disciplina não pode ser ministrada por um responsável\"\n}"
+						}
+					]
+				},
+				{
+					"name": "disciplinas (create) | Sucess",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cpf_professor\": \"12345678916\",\r\n    \"nome_disciplina\": \"Disciplina Teste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/disciplinas",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"disciplinas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "disciplinas (create) | Sucess",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cpf_professor\": \"12345678916\",\r\n    \"nome_disciplina\": \"Disciplina Teste\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/disciplinas",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"disciplinas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"086b78bb6f8977c79090a328165b3855\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "1c59865a-6c4b-48cd-b81a-ff3f68d1e879"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "1.112956"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=7.361572265625, sql.active_record;dur=649.777587890625, instantiation.active_record;dur=0.618408203125, process_action.action_controller;dur=822.421142578125"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id_disciplina\": 3,\n    \"cpf_professor\": \"12345678916\",\n    \"nome_disciplina\": \"Disciplina Teste\",\n    \"ativo\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "disciplinas | Sucess",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome_disciplina\": \"Historia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/disciplinas/3",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"disciplinas",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "disciplinas | Sucess",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome_disciplina\": \"Historia\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/disciplinas/3",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"disciplinas",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f74595b2c743b185c9998ef3fae0f0c0\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "c93f7988-1e99-4d57-9b15-890a8fb5b2b8"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "1.113826"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=1.837158203125, sql.active_record;dur=733.4716796875, instantiation.active_record;dur=0.189697265625, process_action.action_controller;dur=1043.029296875"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"nome_disciplina\": \"Historia\",\n    \"id_disciplina\": 3,\n    \"cpf_professor\": \"12345678916\",\n    \"ativo\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "disciplinas (delete) | Sucess",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/disciplinas/3",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"disciplinas",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "disciplinas (delete) | Sucess",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/disciplinas/3",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"disciplinas",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6d192933926969aa5d6665a2f6ff8070\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "0d5dde3b-8dd5-4662-ab95-6a538c745a5a"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "1.113251"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=1.87939453125, sql.active_record;dur=756.529296875, instantiation.active_record;dur=0.119873046875, process_action.action_controller;dur=1057.999755859375"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id_disciplina\": 3,\n    \"cpf_professor\": \"12345678916\",\n    \"nome_disciplina\": \"Historia\",\n    \"ativo\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "usuarios | Failed is_professor Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"is_professor\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/usuarios/12345678913",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"usuarios",
+								"12345678913"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "usuarios | Failed is_professor Copy",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"is_professor\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/usuarios/12345678913",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"usuarios",
+										"12345678913"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "079805c6-b904-4e90-b0e6-8809644c8b5b"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.838116"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=1.910400390625, sql.active_record;dur=463.551513671875, instantiation.active_record;dur=3.349609375, process_action.action_controller;dur=766.870849609375"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Flag de professor / responsável não pode ser alterada pois tal usuário já possui disciplinas / alunos vinculados ao mesmo\"\n}"
+						}
+					]
+				},
+				{
+					"name": "alunos/responsaveis | Sucess",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}:{{porta}}/disciplinas/professor/12345678913",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"disciplinas",
+								"professor",
+								"12345678913"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "alunos/responsaveis | Sucess",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}:{{porta}}/disciplinas/professor/12345678913",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"disciplinas",
+										"professor",
+										"12345678913"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"0ad38b06a08373429bf88abf3e49c195\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "b6e47fb8-8677-4c70-aa47-9ffcc8a5f58c"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.358892"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=2.5810546875, sql.active_record;dur=150.060791015625, instantiation.active_record;dur=0.079345703125, process_action.action_controller;dur=295.90478515625"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id_disciplina\": 2,\n        \"cpf_professor\": \"12345678913\",\n        \"nome_disciplina\": \"Disciplina Teste\",\n        \"ativo\": true\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "pagamentos",
+			"item": [
+				{
+					"name": "pagamentos (index)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}:{{porta}}/pagamentos",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"pagamentos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "pagamentos (index)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}:{{porta}}/pagamentos",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"pagamentos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"0763685b3d273fbb5e2f20c33fa1e97b\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "c1cf8af7-36ab-4364-b7bc-118d65825e09"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.231732"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=0.33056640625, sql.active_record;dur=89.954833984375, instantiation.active_record;dur=0.066650390625, process_action.action_controller;dur=177.5986328125"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id_pagamento\": 2,\n        \"id_aluno\": 2,\n        \"data_vencimento\": \"2022-07-10\",\n        \"data_pagamento\": \"2022-07-06\",\n        \"valor_mensalidade\": 100.5,\n        \"via_de_pagamento\": \"Pix\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "pagamentos (create) | Dados Invalidos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data_vencimento\": \"10/07/2022\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/pagamentos",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"pagamentos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "pagamentos (create) | Dados Invalidos",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"data_vencimento\": \"10/07/2022\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/pagamentos",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"pagamentos"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "383ab8b9-dfa3-4fc2-ae47-9656b418ad32"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.133118"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=1.879638671875, process_action.action_controller;dur=2.443359375"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Dados inválidos\"\n}"
+						}
+					]
+				},
+				{
+					"name": "pagamentos (create) | Aluno Invalido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_aluno\": 0,\r\n    \"data_vencimento\": \"10/07/2022\",\r\n    \"valor_mensalidade\": 100.50\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/pagamentos",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"pagamentos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "pagamentos (create) | Aluno Invalido",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_aluno\": 0,\r\n    \"data_vencimento\": \"10/07/2022\",\r\n    \"valor_mensalidade\": 100.50\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/pagamentos",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"pagamentos"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "7ce2c3c2-fd3d-4268-864a-f442af62d157"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.389079"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=2.01318359375, sql.active_record;dur=168.3896484375, instantiation.active_record;dur=0.0400390625, process_action.action_controller;dur=329.4921875"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Aluno não encontrado\"\n}"
+						}
+					]
+				},
+				{
+					"name": "pagamentos (create) | Sucess",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_aluno\": 2,\r\n    \"data_vencimento\": \"10/07/2022\",\r\n    \"valor_mensalidade\": 100.50\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/pagamentos",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"pagamentos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "pagamentos (create) | Sucess",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_aluno\": 2,\r\n    \"data_vencimento\": \"10/07/2022\",\r\n    \"valor_mensalidade\": 100.50\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/pagamentos",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"pagamentos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f78b9c37a321348a80c7efa382486e00\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "e3b3fade-9929-412e-ac4b-a3166a0cbb44"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.893846"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=1.96435546875, sql.active_record;dur=654.130615234375, instantiation.active_record;dur=0.159912109375, process_action.action_controller;dur=824.7958984375"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id_pagamento\": 2,\n    \"id_aluno\": 2,\n    \"data_vencimento\": \"2022-07-10\",\n    \"data_pagamento\": null,\n    \"valor_mensalidade\": 100.5,\n    \"via_de_pagamento\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "pagamentos | Aluno Invalido",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_aluno\": 0,\r\n    \"data_pagamento\": \"06/07/2022\",\r\n    \"via_de_pagamento\": \"Pix\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/pagamentos/1",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"pagamentos",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "pagamentos | Aluno Invalido",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_aluno\": 0,\r\n    \"data_pagamento\": \"06/07/2022\",\r\n    \"via_de_pagamento\": \"Pix\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/pagamentos/1",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"pagamentos",
+										"1"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "3feab054-bb8a-480c-9dad-54cf1636bb0d"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.583499"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=4.32958984375, sql.active_record;dur=332.137939453125, instantiation.active_record;dur=0.131103515625, process_action.action_controller;dur=494.303466796875"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Novo aluno a ser vinculado não esta cadastrado\"\n}"
+						}
+					]
+				},
+				{
+					"name": "pagamentos | Sucess",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data_pagamento\": \"06/07/2022\",\r\n    \"via_de_pagamento\": \"Pix\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/pagamentos/1",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"pagamentos",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "pagamentos | Sucess",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"data_pagamento\": \"06/07/2022\",\r\n    \"via_de_pagamento\": \"Pix\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/pagamentos/1",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"pagamentos",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ec3d99a25d1a42760c67854e064d84d8\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "95b50713-8bce-4842-a697-6ea508c71cd4"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "1.289880"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=2.584228515625, sql.active_record;dur=997.23681640625, instantiation.active_record;dur=0.639404296875, process_action.action_controller;dur=1222.9814453125"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data_pagamento\": \"2022-07-06\",\n    \"via_de_pagamento\": \"Pix\",\n    \"id_pagamento\": 2,\n    \"id_aluno\": 2,\n    \"data_vencimento\": \"2022-07-10\",\n    \"valor_mensalidade\": 100.5\n}"
+						}
+					]
+				},
+				{
+					"name": "pagamentos (delete) | Sucess",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/pagamentos/1",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"pagamentos",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "pagamentos (delete) | Sucess",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/pagamentos/1",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"pagamentos",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d2ed1b8774462c2c06714b5314d82da1\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "b19f38a3-2fc7-49dc-8fbd-b5fd8e343ed5"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.889820"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=3.84326171875, sql.active_record;dur=656.73486328125, instantiation.active_record;dur=0.079833984375, process_action.action_controller;dur=826.924560546875"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id_pagamento\": 1,\n    \"id_aluno\": 2,\n    \"data_vencimento\": \"2022-07-10\",\n    \"data_pagamento\": \"2022-07-06\",\n    \"valor_mensalidade\": 100.5,\n    \"via_de_pagamento\": \"Pix\"\n}"
+						}
+					]
+				},
+				{
+					"name": "pagamentos/aluno | Sucess",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}:{{porta}}/pagamentos/aluno/2",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"pagamentos",
+								"aluno",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "pagamentos/aluno | Sucess",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}:{{porta}}/pagamentos/aluno/2",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"pagamentos",
+										"aluno",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"0763685b3d273fbb5e2f20c33fa1e97b\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "984a0720-0225-46d5-942e-18ecdfca6489"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "3.744206"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "sql.active_record;dur=1935.147705078125, start_processing.action_controller;dur=6.6865234375, instantiation.active_record;dur=224.2939453125, process_action.action_controller;dur=1282.779052734375"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id_pagamento\": 2,\n        \"id_aluno\": 2,\n        \"data_vencimento\": \"2022-07-10\",\n        \"data_pagamento\": \"2022-07-06\",\n        \"valor_mensalidade\": 100.5,\n        \"via_de_pagamento\": \"Pix\"\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "cursas",
+			"item": [
+				{
+					"name": "cursas (index)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}:{{porta}}/cursas",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"cursas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "cursas (index)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}:{{porta}}/cursas",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"cursas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 26 Jun 2022 01:26:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"a6d3765071e40056c68c3c4b2bf9ea3e\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "636cf5bb-3a00-4269-b196-e8335e6f5b06"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.015024"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id_cursa\": 3,\n        \"id_disciplina\": 1,\n        \"id_aluno\": 1,\n        \"nota1\": null,\n        \"nota2\": null,\n        \"nota3\": null,\n        \"status\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "cursas (create) | Dados Invalidos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_disciplina\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/cursas",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"cursas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "cursas (create) | Dados Invalidos",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_disciplina\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/cursas",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"cursas"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "db52fe8f-b1a3-40bf-8a4e-1b482bdd7afb"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.080031"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=1.786865234375, process_action.action_controller;dur=2.3310546875"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Dados inválidos\"\n}"
+						}
+					]
+				},
+				{
+					"name": "cursas (create) | Disciplina Invalido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_disciplina\": 0,\r\n    \"id_aluno\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/cursas",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"cursas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "cursas (create) | Disciplina Invalido",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_disciplina\": 0,\r\n    \"id_aluno\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/cursas",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"cursas"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "f3630128-0f36-489a-9e33-8590241fbb5d"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.366821"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=5.60595703125, sql.active_record;dur=175.78076171875, instantiation.active_record;dur=0.0693359375, process_action.action_controller;dur=273.095703125"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Disciplina não encontrada\"\n}"
+						}
+					]
+				},
+				{
+					"name": "cursas (create) | Aluno Invalido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_disciplina\": 1,\r\n    \"id_aluno\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/cursas",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"cursas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "cursas (create) | Aluno Invalido",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_disciplina\": 1,\r\n    \"id_aluno\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/cursas",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"cursas"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "53a20067-4e23-4c03-853d-6f531a6c1683"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.351133"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=1.796630859375, sql.active_record;dur=190.7255859375, instantiation.active_record;dur=0.580810546875, process_action.action_controller;dur=291.837646484375"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Aluno não encontrado\"\n}"
+						}
+					]
+				},
+				{
+					"name": "cursas (create) | Sucess",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_disciplina\": 1,\r\n    \"id_aluno\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/cursas",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"cursas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "cursas (create) | Sucess",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_disciplina\": 1,\r\n    \"id_aluno\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/cursas",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"cursas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e89aff074de12eb1416aea4edf668648\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "13bf477d-c093-465f-a74e-dd74568cb20e"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.624871"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=2.1728515625, sql.active_record;dur=459.9501953125, instantiation.active_record;dur=0.421875, process_action.action_controller;dur=557.707763671875"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id_cursa\": 1,\n    \"id_disciplina\": 1,\n    \"id_aluno\": 1,\n    \"nota1\": null,\n    \"nota2\": null,\n    \"nota3\": null,\n    \"status\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "cursas | Disciplina Invalido",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_disciplina\": 9\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/cursas/1",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"cursas",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "cursas | Disciplina Invalido",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_disciplina\": 9\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/cursas/1",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"cursas",
+										"1"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "97be43b9-9df3-4235-b67b-6ebfbf885e4c"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.391199"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=1.908935546875, sql.active_record;dur=212.418212890625, instantiation.active_record;dur=0.099609375, process_action.action_controller;dur=321.404541015625"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Disciplina não encontrada\"\n}"
+						}
+					]
+				},
+				{
+					"name": "cursas | Aluno Invalido",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_aluno\": 9\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/cursas/1",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"cursas",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "cursas | Aluno Invalido",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_aluno\": 9\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/cursas/1",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"cursas",
+										"1"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "91e7fc9d-afab-419a-ae84-e0a99ca23f6a"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.691531"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=1.893798828125, sql.active_record;dur=300.284912109375, instantiation.active_record;dur=0.12939453125, process_action.action_controller;dur=622.70556640625"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Aluno não encontrado\"\n}"
+						}
+					]
+				},
+				{
+					"name": "cursas | Sucess",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/cursas/1",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"cursas",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "cursas | Sucess",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/cursas/1",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"cursas",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3e07e6deec75cd866aff5e22fa5c38e0\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "96823027-d1fd-4186-a1a3-8a75814e0196"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "1.052694"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=2.12890625, sql.active_record;dur=826.321044921875, instantiation.active_record;dur=228.289306640625, process_action.action_controller;dur=983.76025390625"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"id_cursa\": 1,\n    \"id_disciplina\": 1,\n    \"id_aluno\": 1,\n    \"nota1\": null,\n    \"nota2\": null,\n    \"nota3\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "cursas (delete) | Sucess",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{porta}}/cursas/1",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"cursas",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "cursas (delete) | Sucess",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}:{{porta}}/cursas/2",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"cursas",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6d999ee0e2e55db01d1aa44a54f5ec8f\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "c3357496-e2fa-4748-b78f-f945cc0bca42"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "5.611298"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "sql.active_record;dur=2215.41162109375, start_processing.action_controller;dur=14.763427734375, instantiation.active_record;dur=215.051025390625, process_action.action_controller;dur=1203.9912109375"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id_cursa\": 2,\n    \"id_disciplina\": 1,\n    \"id_aluno\": 1,\n    \"nota1\": null,\n    \"nota2\": null,\n    \"nota3\": null,\n    \"status\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "cursas/disciplina | Disciplina Failed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}:{{porta}}/cursas/disciplina/9",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"cursas",
+								"disciplina",
+								"9"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "cursas/disciplina | Disciplina Failed",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}:{{porta}}/cursas/disciplina/9",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"cursas",
+										"disciplina",
+										"9"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "a38c8459-5d36-4b31-b10d-f42e524d2fdc"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "5.068059"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "sql.active_record;dur=3066.492919921875, start_processing.action_controller;dur=2.53759765625, instantiation.active_record;dur=0.0537109375, process_action.action_controller;dur=803.602294921875"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Disciplina não encontrada\"\n}"
+						}
+					]
+				},
+				{
+					"name": "cursas/disciplina | Sucess",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}:{{porta}}/cursas/disciplina/1",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"cursas",
+								"disciplina",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "cursas/disciplina | Sucess",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}:{{porta}}/cursas/disciplina/1",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"cursas",
+										"disciplina",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a6d3765071e40056c68c3c4b2bf9ea3e\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "689341a6-f78d-4d61-8f76-712beada0881"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "1.289769"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=2.342529296875, sql.active_record;dur=901.96630859375, instantiation.active_record;dur=458.270263671875, process_action.action_controller;dur=1221.716796875"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id_cursa\": 3,\n        \"id_disciplina\": 1,\n        \"id_aluno\": 1,\n        \"nota1\": null,\n        \"nota2\": null,\n        \"nota3\": null,\n        \"status\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "cursas/aluno | Aluno Failed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}:{{porta}}/cursas/aluno/9",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"cursas",
+								"aluno",
+								"9"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "cursas/aluno | Aluno Failed",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}:{{porta}}/cursas/aluno/9",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"cursas",
+										"aluno",
+										"9"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "3f2ce060-e2ea-444e-829b-3e39fe132462"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "1.063845"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=12.439453125, sql.active_record;dur=329.510498046875, instantiation.active_record;dur=0.064208984375, process_action.action_controller;dur=688.120849609375"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Aluno não encontrado\"\n}"
+						}
+					]
+				},
+				{
+					"name": "cursas/aluno | Sucess",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}:{{porta}}/cursas/aluno/1",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{porta}}",
+							"path": [
+								"cursas",
+								"aluno",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "cursas/aluno | Sucess",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}:{{porta}}/cursas/aluno/1",
+									"host": [
+										"{{url}}"
+									],
+									"port": "{{porta}}",
+									"path": [
+										"cursas",
+										"aluno",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a6d3765071e40056c68c3c4b2bf9ea3e\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "e3c00c9a-6d0c-4c18-8bc4-e41148fe48c1"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.878943"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "start_processing.action_controller;dur=2.23681640625, sql.active_record;dur=451.365478515625, instantiation.active_record;dur=181.595458984375, process_action.action_controller;dur=789.373291015625"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id_cursa\": 3,\n        \"id_disciplina\": 1,\n        \"id_aluno\": 1,\n        \"nota1\": null,\n        \"nota2\": null,\n        \"nota3\": null,\n        \"status\": 0\n    }\n]"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "porta",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
